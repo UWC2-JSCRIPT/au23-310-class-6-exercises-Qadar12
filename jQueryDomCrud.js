@@ -15,8 +15,7 @@ $(document).ready(function () {
   // with an id of "cta" after the last <p>
 
   let newA = $('<a href="#">');
-  newA.text("Buy Now");
-  newA.attr("id", "cta");
+  newA.text("Buy Now").attr("id", "cta");
   $("main").append(newA);
 
   // Remove (delete) the last paragraph
