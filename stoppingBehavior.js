@@ -10,13 +10,13 @@ $(document).ready(function () {
 
   $("#more-info").on("click", function (event) {
     event.preventDefault();
-    alert("More info");
+    alert("Here's some info");
   });
 
   // When the bark button is clicked, should alert "Bow wow!"
   // Should *not* alert "meow"
   $(".dog").on("click", function (event) {
     event.stopPropagation();
-    alert("bark");
+    alert("Bow wow!");
   });
 });
