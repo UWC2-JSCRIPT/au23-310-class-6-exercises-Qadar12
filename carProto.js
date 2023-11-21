@@ -4,7 +4,6 @@
  * @param {String} model
  */
 
-/*
 //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
 class Car {
   constructor(model) {
@@ -24,43 +23,40 @@ class Car {
     return `${this.model} is going ${this.currentSpeed} mph`;
   }
 }
-/**
- * ElectricCar class
- * @constructor
- * @param {String} model
- 
 
-//  Create an instance, accelerate twice, brake once, and console log the instance.toString()
 const honda = new Car("honda");
 
 honda.accelerate();
 honda.accelerate();
 honda.brake();
-honda.toString();
+console.log(honda.toString());
 
+/**
+ * ElectricCar class
+ * @constructor
+ * @param {String} model
+ 
 */
-class Car {
-  constructor(make, model, maxSpeed) {
-    this.make = make;
-    this.model = model;
-    this.maxSpeed = maxSpeed;
+//  Create an instance, accelerate twice, brake once, and console log the instance.toString()
+
+class ElectricCar extends Car {
+  constructor(model, currentSpeed) {
+    super(model, currentSpeed);
+    this.motor = "electric";
   }
-  honk() {
-    console.log("Beep");
+
+  //modified so its twice as fast
+  accelerate() {
+    return (this.currentSpeed += 2);
   }
+
+  //modified to include motor
   toString() {
-    return `${this.make} ${this.model} with a max speed of ${this.maxSpeed}`;
+    return `${this.model} has a ${this.motor} motor and is going ${this.currentSpeed} mph`;
   }
 }
-class Porsche extends Car {
-  constructor(model, maxSpeed) {
-    super("Porsche", model, maxSpeed);
-    this.turboCharged = true;
-  }
-}
-const nineEleven = new Porsche("911", 160);
-console.log(nineEleven.toString());
-nineEleven.honk();
-
-// Panamera or 918 Spyder
-
+const rivian = new ElectricCar("Rivian", 160);
+rivian.accelerate();
+rivian.accelerate();
+rivian.brake();
+console.log(rivian.toString());
